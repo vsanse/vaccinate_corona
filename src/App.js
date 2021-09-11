@@ -11,7 +11,7 @@ function randomIntFromInterval(min, max) {
 }
 function App() {
   const phobicRef = useRef(null);
-  const [caughtTimes, setCaugthTimes] = useState(0);
+  const [caughtTimes, setCaughtTimes] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   // let prevTop = 0;
   // let prevLeft = 0;
@@ -27,9 +27,15 @@ function App() {
     phobicRef.current.style.width = "0px";
     setTimeout(() => {
       phobicRef.current.style.height = `${WRAPPER__SIZE}px`;
-      phobicRef.current.style.width =  `${WRAPPER__SIZE}px`;
-      phobicRef.current.style.top = `${randomIntFromInterval(0, innerHeight)}px`;
-      phobicRef.current.style.left = `${randomIntFromInterval(0, innerWidth)}px`;
+      phobicRef.current.style.width = `${WRAPPER__SIZE}px`;
+      phobicRef.current.style.top = `${randomIntFromInterval(
+        0,
+        innerHeight
+      )}px`;
+      phobicRef.current.style.left = `${randomIntFromInterval(
+        0,
+        innerWidth
+      )}px`;
     }, 1500);
   };
 
@@ -44,7 +50,7 @@ function App() {
       mouseLeft >= randomLeft &&
       mouseLeft <= randomLeft + WRAPPER__SIZE
     ) {
-      setCaugthTimes((prev) => prev + 1);
+      setCaughtTimes((prev) => prev + 1);
       setGameOver(true);
       regenerateItem();
       setTimeout(() => {
@@ -62,9 +68,13 @@ function App() {
         className="App__phobicWrapper"
         ref={phobicRef}
         onMouseEnter={handleMouseEnter}
-        onMouseOver={handleMouseEnter}
       >
-        <img src={item} className="App-logo App__phobic--img" alt="logo" />
+        <img
+          src={item}
+          className="App-logo App__phobic--img"
+          alt="logo"
+          onMouseEnter={handleMouseEnter}
+        />
       </div>
       {gameOver && (
         <div className="App__GameOver">
