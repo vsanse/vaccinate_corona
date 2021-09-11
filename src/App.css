@@ -11,7 +11,7 @@
 .App-logo {
   height: 150px;
   width: 150px;
-  object-fit: cover;
+  object-fit: contain;
   pointer-events: none;
 }
 .App__phobicWrapper {
