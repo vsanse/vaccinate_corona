@@ -1,31 +1,75 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+  height: 100vh;
+  width: 100vw;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:30px;'><text y='50%'>💉</text></svg>")
+      16 0,
+    auto;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
   pointer-events: none;
 }
-
+.App__phobicWrapper {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 250px;
+  transition: 0.1s ease top, 0.2s ease left, 0.5s ease height, 0.5s ease width;
+  top: 0;
+  left: 0;
+  /* background-color: rgba(255, 255, 255, 0.15); */
+  overflow: hidden;
+  border-radius: 50%;
+}
+.App__score {
+  position: fixed;
+  top: 0;
+  right: 10px;
+  font-size: 25px;
+  color: #fff;
+  font-weight: 700;
+}
+.App__GameOver {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+}
+.title {
+  font-size: 30px;
+}
+.score {
+  font-size: 20px;
+}
+/* button {
+  background-color: #61dafb;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 9px;
+  font-weight: 700;
+} */
+/* .App__phobicWrapper:hover {
+  background-color:  #61dafb6c;
+} */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
