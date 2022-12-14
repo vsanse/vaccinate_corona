@@ -4,7 +4,7 @@ name: dev-build-and-deploy
 on:
   push:
     branches:
-      - OB_572_testing_trends
+      - master
 jobs:
   # To build the project
   build-fe:
