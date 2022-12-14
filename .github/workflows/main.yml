@@ -4,7 +4,7 @@ name: dev-build-and-deploy
 on:
   push:
     branches:
-      - master
+      - ma*
 jobs:
   # To build the project
   build-fe:
@@ -24,6 +24,10 @@ jobs:
         run: yarn install
       - name: Building project
         run: yarn run build
+      - name: Install serve
+        run: yarn global add serve
+      - name: Serve from build
+        run: serve -s build
 #       - name: Configure AWS Credentials
 #         uses: aws-actions/configure-aws-credentials@v1
 #         with:
